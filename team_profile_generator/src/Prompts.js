@@ -30,6 +30,7 @@ Prompts.prototype.initializeProgram = function() {
       name: 'officeNumber',
       message: "Enter the team manager's office number."
     }])
+    // Add the manager to the employees array and show the menu
     .then(({ name, id, email, officeNumber }) => {
       manager = new Manager(name, id, email, officeNumber);
       this.employees.push(manager)
@@ -85,6 +86,7 @@ Prompts.prototype.addEngineer = function() {
       name: 'github',
       message: "Enter the engineer's github profile."
     }])
+    // Add an engineer to the employees array and return to the menu
     .then(({ name, id, email, github }) => {
       engineer = new Engineer(name, id, email, github);
       this.employees.push(engineer)
@@ -114,6 +116,7 @@ Prompts.prototype.addIntern = function() {
       name: 'school',
       message: "Enter the intern's school."
     }])
+    // Add an intern to the employees array and return to the menu
     .then(({ name, id, email, school }) => {
       intern = new Intern(name, id, email, school);
       this.employees.push(intern)
@@ -121,6 +124,7 @@ Prompts.prototype.addIntern = function() {
     })
 }
 
+// Simply copy the large function in buildSite.js to transfer the employee array
 Prompts.prototype.buildSite = buildSite;
 
 module.exports = Prompts;
