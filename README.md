@@ -12,6 +12,6 @@ Clone the repo in your local directory. When in the local directory, type 'npm i
 
 From the project folder, type 'node index' in the command line to launch the program. Then, provide the information you are asked. You can continue adding Engineers and Interns until you are done, at which point you select the 'Finish' option from the menu. Then, a new HTML file will be created in the /dist folder with the information you provided.
 
-<img src ='./src/images/firstSS.png'>
-<img src ='./src/images/secondSS.png'>
+<img src ='./team_profile_generator/src/images/firstSS.png'>
+<img src ='./team_profile_generator/src/images/secondSS.png'>
 
