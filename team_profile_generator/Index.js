@@ -52,7 +52,7 @@ Prompts.prototype.showMenu = function() {
           this.addEngineer();
           break;
         case 'Add an intern':
-          console.log("Intern selectomundo")
+          this.addIntern();
           break;
         case 'Finish':
           console.log("Finito bandido")
@@ -63,7 +63,63 @@ Prompts.prototype.showMenu = function() {
 }
 
 Prompts.prototype.addEngineer = function() {
-  
+  inquirer
+    .prompt([{
+      type: 'text',
+      name: 'name',
+      message: "Enter the engineer's name."
+    },
+    {
+      type: 'text',
+      name: 'id',
+      message: "Enter the engineer's employee ID."
+    },
+    {
+      type: 'text',
+      name: 'email',
+      message: "Enter the engineer's email address."
+    },
+    {
+      type: 'text',
+      name: 'github',
+      message: "Enter the engineer's github profile."
+    }])
+    .then(({ name, id, email, github }) => {
+      engineer = new Engineer(name, id, email, github);
+      this.employees.push(engineer)
+      console.log(this.employees)
+      this.showMenu()
+    })
+}
+
+Prompts.prototype.addIntern = function() {
+  inquirer
+    .prompt([{
+      type: 'text',
+      name: 'name',
+      message: "Enter the intern's name."
+    },
+    {
+      type: 'text',
+      name: 'id',
+      message: "Enter the intern's employee ID."
+    },
+    {
+      type: 'text',
+      name: 'email',
+      message: "Enter the intern's email address."
+    },
+    {
+      type: 'text',
+      name: 'github',
+      message: "Enter the intern's school."
+    }])
+    .then(({ name, id, email, github }) => {
+      intern = new Intern(name, id, email, github);
+      this.employees.push(intern)
+      console.log(this.employees)
+      this.showMenu()
+    })
 }
 
 new Prompts().initializeProgram();
