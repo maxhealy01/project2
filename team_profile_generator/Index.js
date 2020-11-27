@@ -3,10 +3,12 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
 
-const employees = []
+function Prompts() {
+  this.employees = []
+}
 
-const initializeProgram = () => {
-  return inquirer
+Prompts.prototype.initializeProgram = function() {
+  inquirer
     .prompt([{
       type: 'text',
       name: 'name',
@@ -29,12 +31,42 @@ const initializeProgram = () => {
     }])
     .then(({ name, id, email, officeNumber }) => {
       manager = new Manager(name, id, email, officeNumber);
-      employees.push(manager)
-      console.log(employees)
+      this.employees.push(manager)
+      this.showMenu()
     })
 }
 
-initializeProgram();
+Prompts.prototype.showMenu = function() {
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        name: 'choice',
+        message: 'What would you like to do?',
+        choices: ['Add an engineer', 'Add an intern', 'Finish']
+    }])
+    // Check the selection and launch the appropriate function
+    .then(({choice}) => {
+      switch (choice) {
+        case 'Add an engineer':
+          this.addEngineer();
+          break;
+        case 'Add an intern':
+          console.log("Intern selectomundo")
+          break;
+        case 'Finish':
+          console.log("Finito bandido")
+          break
+      }
+
+    })
+}
+
+Prompts.prototype.addEngineer = function() {
+  
+}
+
+new Prompts().initializeProgram();
 
 
 // WHEN I start the application
