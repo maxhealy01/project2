@@ -10,15 +10,16 @@ const buildSite = employeeArr => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>My Team</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/ef258a0d19.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href = "./style.css">
     </head>
-  
+
     <body>
       <header>
         <h1>My Team</h1>
       </header>
 
-      <main class = "container">
+      <main class = "container col-12">
       ${generateEmployees(employeeArr)}
       </main>
     </body>
@@ -40,6 +41,18 @@ const showInfo = employee => {
   }
 }
 
+// Create a function that displays an icon that matches the employee's role
+const showIcon = employee => {
+  switch (employee.getRole()) {
+    case 'Manager':
+      return `<i class="icon fas fa-coffee"></i>`
+    case 'Intern':
+      return `<i class="icon fas fa-graduation-cap"></i>`
+    case 'Engineer':
+      return `<i class="icon fas fa-glasses"></i>`
+  }
+}
+
 const generateEmployees = employeeArr => {
   // Create an empty string to hold all the employee info
   let employeeInfo = '';
@@ -49,12 +62,18 @@ const generateEmployees = employeeArr => {
       <section class="card">
         <div class="title">
           <h4>${employeeArr[i].name}</h4>
-          <h4>${employeeArr[i].getRole()}</h4>
+          <h4>${showIcon(employeeArr[i])}${employeeArr[i].getRole()}</h4>
         </div>
         <div class="info">
-          <p>ID: ${employeeArr[i].id}</p>
-          <p>Email: <a href="mailto:${employeeArr[i].email}">${employeeArr[i].email}</a></p>
-          <p>${showInfo(employeeArr[i])}</p>
+          <div class = "id">
+            <p>ID: ${employeeArr[i].id}</p>
+          </div>
+          <div class = "email">
+            <p>Email: <a href="mailto:${employeeArr[i].email}">${employeeArr[i].email}</a></p>
+          </div>
+          <div class = "specialInfo">
+            <p>${showInfo(employeeArr[i])}</p>
+          </div>
         </div>
       </section>
     `

@@ -1,28 +1,45 @@
 header {
   padding: 10px;
   text-align: center;
+  background-color: lightgreen;
+  height: 10vh;
+}
+
+body {
+  background-color: lightcoral
 }
 
 .container {
-  background-color: lightcoral;
   padding: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100%;
 }
 
 .card {
   margin: 5px;
   width: 250px;
   border-radius: 10px;
+  max-height: 300px;
 }
 
 .title {
   background-color: lightblue;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  padding: 5px 0 5px 10px;
+}
+
+.icon {
+  padding: 0px 5px 0 0;
 }
 
 .info {
   padding: 5px;
+  display: flex;
+  flex-flow: column wrap
+}
+
+.id, .email {
+  border-bottom: 1px solid black
 }
