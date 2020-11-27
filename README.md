@@ -10,6 +10,6 @@ Clone the repo in your local directory. When in the local directory, type 'npm i
 
 ## Usage
 
-From the project folder, type 'node index' in the command line to launch the program. Then, provide the information you are asked. You can continue adding Engineers and Interns until you are done, at which point you select the 'Finish' option from the menu.
+From the project folder, type 'node index' in the command line to launch the program. Then, provide the information you are asked. You can continue adding Engineers and Interns until you are done, at which point you select the 'Finish' option from the menu. Then, a new HTML file will be created in the /dist folder with the information you provided.
 
 <img src ='assets/images/asdpo' height = 450px>
