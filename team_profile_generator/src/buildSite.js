@@ -1,5 +1,7 @@
+const writeSite = require('./writeSite')
+
 const buildSite = employeeArr => {
-  console.log( `
+  let fileContent = `
   <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -7,21 +9,23 @@ const buildSite = employeeArr => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>My Team</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href = "./style.css">
     </head>
   
     <body>
-      <navbar>
+      <header>
         <h1>My Team</h1>
-      </navbar>
+      </header>
 
-      <main>
+      <main class = "container">
       ${generateEmployees(employeeArr)}
       </main>
     </body>
   </html>
-  `)
+  `
+  // Send the info to the function that actually writes the HTML file
+  writeSite(fileContent)
 }
 
 // Create a function that checks the employee's role and returns text matching the info relevant to that class
@@ -32,7 +36,7 @@ const showInfo = employee => {
     case 'Intern':
       return `School: ${employee.school}`
     case 'Engineer':
-      return `Github: ${employee.github}`
+      return `Github: <a href="https://github.com/${employee.github}">${employee.github}</a>`
   }
 }
 
@@ -43,12 +47,14 @@ const generateEmployees = employeeArr => {
   for (i = 0; i < employeeArr.length; i++) {
     employeeInfo += `
       <section class="card">
-        <h2>${employeeArr[i].name}</h2>
-        <h2>${employeeArr[i].getRole()}</h2>
+        <div class="title">
+          <h4>${employeeArr[i].name}</h4>
+          <h4>${employeeArr[i].getRole()}</h4>
+        </div>
         <div class="info">
-          <h3>ID: ${employeeArr[i].id}</h3>
-          <h3>Email: ${employeeArr[i].email}</h3>
-          <h3>${showInfo(employeeArr[i])}</h3>
+          <p>ID: ${employeeArr[i].id}</p>
+          <p>Email: <a href="mailto:${employeeArr[i].email}">${employeeArr[i].email}</a></p>
+          <p>${showInfo(employeeArr[i])}</p>
         </div>
       </section>
     `

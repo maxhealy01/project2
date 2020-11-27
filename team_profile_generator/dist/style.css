@@ -1,0 +1,28 @@
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+.container {
+  background-color: lightcoral;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 5px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.title {
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.info {
+  padding: 5px;
+}
