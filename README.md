@@ -14,6 +14,8 @@ From the project folder, type 'node index' in the command line to launch the pro
 
 This <a href="https://drive.google.com/file/d/1nriefxFJfAbG0hapxVv1IeXmGcTblFPS/view">video</a> demonstrates how the app works.
 
+![Example1_gif](https://i.imgur.com/jqWi2J8.gif)
+
 <img src ='./team_profile_generator/src/images/firstSS.png'>
 <img src ='./team_profile_generator/src/images/secondSS.png'>
 
