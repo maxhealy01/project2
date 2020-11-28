@@ -65,15 +65,9 @@ const generateEmployees = employeeArr => {
           <h4>${showIcon(employeeArr[i])}${employeeArr[i].getRole()}</h4>
         </div>
         <div class="info">
-          <div class = "id">
-            <p>ID: ${employeeArr[i].id}</p>
-          </div>
-          <div class = "email">
-            <p>Email: <a href="mailto:${employeeArr[i].email}">${employeeArr[i].email}</a></p>
-          </div>
-          <div class = "specialInfo">
-            <p>${showInfo(employeeArr[i])}</p>
-          </div>
+          <p class = "id">ID: ${employeeArr[i].id}</p>
+          <p class= "email">Email: <a href="mailto:${employeeArr[i].email}">${employeeArr[i].email}</a></p>
+          <p class = "specialInfo">${showInfo(employeeArr[i])}</p>
         </div>
       </section>
     `

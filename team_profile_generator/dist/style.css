@@ -36,8 +36,11 @@ body {
 
 .info {
   padding: 5px;
-  display: flex;
-  flex-flow: column wrap
+  overflow: hidden;
+}
+
+.info p {
+  text-overflow: clip;
 }
 
 .id, .email {
