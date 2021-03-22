@@ -22,3 +22,5 @@ This <a href="https://drive.google.com/file/d/1nriefxFJfAbG0hapxVv1IeXmGcTblFPS/
 ## Technologies
 
 This app was created using JavaScript, CSS, Node.js, and the npm jest and inquirer packages.
+# pizza-hunt
+# shop-shop
